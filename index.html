@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunset">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Book Library</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=dm-sans:400,400i,700" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar bg-base-300">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl">robertosantos.dev</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a>GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <main id="main-container" class="grid grid-cols-3 gap-16 m-12">
+        <div id="form-section">
+            <form action id="add-book-form" class="inline-block">
+                <label for="title" class="label-text font-bold ml-1">Book Title:</label>
+                <input type="text" id="title" name="title" class="input input-bordered w-full max-w-xs" required><br>
+
+                <label for="author" class="label-text font-bold ml-1">Author Name:</label>
+                <input type="text" id="author" name="author" class="input input-bordered w-full max-w-xs" required><br>
+
+                <div id="pages-read-form" style="display: none;">
+                    <label for="pages-read" class="label-text font-bold ml-1">Pages Read:</label><br>
+                    <input type="number" id="pages-read" name="pages-read"
+                        class="input input-bordered w-full max-w-xs [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0">
+                </div>
+
+                <div class="form-control">
+                    <label class="cursor-pointer label">
+                      <span class="label-text">Already read?</span>
+                      <input type="checkbox" checked="checked" class="checkbox checkbox-success" id="read-toggle"/><br>
+                    </label>
+                  </div>
+
+                <input type="submit" value="Submit" class="btn btn-success">
+                <input type="reset" value="Reset" class="btn">
+            </form>
+        </div>
+        <div id="list-section" class="col-span-2 bg-base-200 rounded-lg h-10">
+            <table id="book-list" class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Pages Read</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="book-table-body">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
